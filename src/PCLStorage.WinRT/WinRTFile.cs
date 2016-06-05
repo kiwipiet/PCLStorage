@@ -49,6 +49,13 @@ namespace PCLStorage
         }
 
         /// <summary>
+        /// The date and time the file was created
+        /// </summary>
+        public DateTime CreationTime {
+            get { return _wrappedFile.DateCreated.DateTime; }
+        }
+
+        /// <summary>
         /// Opens the file
         /// </summary>
         /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode</param>

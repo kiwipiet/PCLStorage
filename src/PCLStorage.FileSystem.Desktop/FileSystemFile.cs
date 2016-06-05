@@ -25,8 +25,10 @@ namespace PCLStorage
         /// <param name="path">The file path</param>
         public FileSystemFile(string path)
         {
-            _name = System.IO.Path.GetFileName(path);
+            var file = new FileInfo(path);
+            _name = file.Name;
             _path = path;
+            CreationTime = file.CreationTime;
         }
 
         /// <summary>
@@ -44,6 +46,11 @@ namespace PCLStorage
         {
             get { return _path; }
         }
+
+        /// <summary>
+        /// The date and time the file was created
+        /// </summary>
+        public DateTime CreationTime { get; }
 
         /// <summary>
         /// Opens the file

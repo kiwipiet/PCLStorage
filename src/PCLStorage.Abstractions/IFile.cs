@@ -36,6 +36,10 @@ namespace PCLStorage
         /// The "full path" of the file, which should uniquely identify it within a given <see cref="IFileSystem"/>
         /// </summary>
         string Path { get; }
+        /// <summary>
+        /// The date and time the file was created
+        /// </summary>
+        DateTime CreationTime { get; }
 
         /// <summary>
         /// Opens the file
